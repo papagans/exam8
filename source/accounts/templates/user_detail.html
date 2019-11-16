@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Пользователь{% endblock %}
+{% block menu %}
+    {% if user_obj == request.user %}
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+        <a class="nav-link" href="{% url "accounts:user_update" %}">Редактировать <span class="sr-only">(current)</span></a>
+      </li>
+                <li class="nav-item active">
+        <a class="nav-link" href="{% url "accounts:password_change" user_obj.pk %}">Сменить пароль <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+          </div>
+{#    <li><a href="{% url "accounts:password_change" user_obj.pk %}">Смена пароля</a></li>#}
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <h1>Личный кабинет</h1>
+    {% if user_obj.profile.avatar %}
+       <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="250" height="250" alt="user picture">
+        {% else %}
+        <img class="avatar" src="{% static 'no-image-900x.jpg' %}" width="250" height="250" alt="user picture">
+   {% endif %}
+{#    <img src="{{ user_obj.profile.avatar.url }}" alt="">#}
+    <p>Имя пользователя: {{ user_obj.username }}</p>
+    <p>Имя: {{ user_obj.first_name }}</p>
+    <p>Фамилия: {{ user_obj.last_name }}</p>
+    <p>Почта: {{ user_obj.email }}</p>
+    <p>Ппрофиль github: <a href="{{ user_obj.profile.github }}">{{ user_obj.profile.github }}</a></p>
+{% endblock %}

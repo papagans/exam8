@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+   <h1>Users:</h1>
+   <hr/>
+   {% for user in users %}
+           <div class="card border-primary mb-3" style="max-width: 18rem; text-align: center">
+  <div class="card-header"><h3>{{ user.username}}</h3>
+    <p class="card-title"><a href="{% url 'accounts:detail' user.pk %}"> Details...</a></p>
+  </div>
+           </div>
+   {% endfor %}
+{% endblock %}

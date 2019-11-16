@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{% block title %}Удалить товар{% endblock %}
+{% block title %}Удалить отзыв{% endblock %}
 {% block content %}
-    <h3 class="text-center">Товар {{ product }} будет удален!</h3>
-    <form class="text-center" action="{% url "webapp:product_delete" product.pk %}"
+    <h3 class="text-center">Отзыв будет удален!</h3>
+    <form class="text-center" action="{% url "webapp:otziv_delete" otziv.pk %}"
           method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="submit" value="ОК" class="btn btn-danger">

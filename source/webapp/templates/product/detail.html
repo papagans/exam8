@@ -14,8 +14,19 @@
             </div>
         </div>
         <p><b>Категория:</b> {{ product.get_category_display }}</p>
-        <p><a href="{% url 'product_update' product.pk %}" class="btn btn-primary">Изменить</a></p>
-        <p><a href="{% url 'product_delete' product.pk %}" class="btn btn-danger">Удалить</a></p>
-    <p><b>Отзывы:</b> {{ product. }}</p>
+        <p><a href="{% url 'webapp:product_update' product.pk %}" class="btn btn-primary">Изменить</a></p>
+        <p><a href="{% url 'webapp:product_delete' product.pk %}" class="btn btn-danger">Удалить</a></p>
+        <p><a href="{% url 'webapp:otziv_create' product.pk %}" class="btn btn-danger">Добавить отзыв</a></p>
+        <p><b><h4>Отзывы:</h4></b></p>
+    {% for otz in otziv %}
+        <p>Пользователь: {{ otz.user }}<br> </p>
+        <p>Email: {{ otz.user.email }}<br> </p>
+        <p>Отзыв: {{ otz.description}}<br></p>
+        <p>Оценка: {{ otz.ocenka}}</p>
+        <p><a href="{% url 'webapp:otziv_update' otz.pk %}" class="btn btn-danger">Редактировать отзыв</a>
+        <a href="{% url 'webapp:otziv_delete' otz.pk %}" class="btn btn-danger">Удалить отзыв</a></p><hr>
+       {% endfor %}
+  </div>
+</div>
     </div>
 {% endblock %}

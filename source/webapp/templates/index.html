@@ -3,7 +3,7 @@
 {% block title %}Товары{% endblock %}
 {% block menu %}
 {#    {% if perms.webapp.add_product and perms.webapp.can_have_piece_of_pizza %}#}
-        <li class="nav-item"><a href="{% url 'product_create' %}" class="nav-link">Добавить товар</a></li>
+        <li class="nav-item"><a href="{% url 'webapp:product_create' %}" class="nav-link">Добавить товар</a></li>
 {#        <li class="nav-item"><a href="{% url 'webapp:order_list' %}" class="nav-link">Заказы</a></li>#}
 {#    {% endif %}#}
 {% endblock %}
@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p class="card-text">{{ product.get_category_display }}</p>
-                        <a href="{% url "product_detail" product.pk %}" class="btn btn-primary">Посмотреть</a>
+                        <a href="{% url "webapp:product_detail" product.pk %}" class="btn btn-primary">Посмотреть</a>
                     </div>
                 </div>
             </div>
