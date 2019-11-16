@@ -5,7 +5,7 @@
   "fields": {
     "name": "\u041c\u044b\u043b\u043e",
     "category": "household",
-    "description": "\u041c\u044b\u043b\u043e \u043c\u044b\u043b\u044c\u043d\u043e\u0435",
+    "description": "\u041c\u044b\u043b\u043e \u043c\u044b\u043b\u044c\u043d\u043e\u043534",
     "photo": "product_images/milo.jpg"
   }
 },
@@ -13,7 +13,7 @@
   "model": "webapp.product",
   "pk": 2,
   "fields": {
-    "name": "\u0441\u0438\u043c\u0441\u044b",
+    "name": "\u0421\u0430\u043c\u0441\u044b",
     "category": "food",
     "description": "\u0441\u043e\u0447\u043d\u044b\u0435, \u043c\u043e\u0449\u043d\u044b\u0435",
     "photo": "product_images/Samsa-recept-prigotovlenija-v-domashnih-uslovijah-poshagovo.jpg"
@@ -21,32 +21,22 @@
 },
 {
   "model": "webapp.product",
-  "pk": 3,
+  "pk": 4,
+  "fields": {
+    "name": "\u041f\u043e\u0440\u043e\u0448\u043e\u043a",
+    "category": "household",
+    "description": "\u041f\u043e\u0440\u043e\u0448\u043e\u043a \u041c\u0418\u0424",
+    "photo": "product_images/poroshok.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 8,
   "fields": {
     "name": "\u0413\u043e\u0432\u043d\u043e",
     "category": "other",
-    "description": "\u0432\u043e\u043d\u044e\u0447\u0435\u0435 \u0433\u043e\u0432\u043d\u043e \u041c\u0430\u0439\u043a\u043b\u0430 \u0414\u0436\u0435\u043a\u0441\u043e\u043d\u0430",
-    "photo": ""
-  }
-},
-{
-  "model": "webapp.otziv",
-  "pk": 1,
-  "fields": {
-    "user": 1,
-    "product": 1,
-    "description": "\u043d\u043e\u0440\u043c",
-    "ocenka": 4
-  }
-},
-{
-  "model": "webapp.otziv",
-  "pk": 2,
-  "fields": {
-    "user": 1,
-    "product": 3,
-    "description": "\u0413\u043e\u0432\u043d\u043e \u0433\u043e\u0432\u043d\u044f\u043d\u043e\u0435",
-    "ocenka": 1
+    "description": "\u0413\u043e\u0432\u043d\u043e \u041c\u0430\u0439\u043a\u043b\u0430 \u0414\u0436\u0435\u043a\u0441\u043e\u043d\u0430",
+    "photo": "product_images/govno_tdw7R9C.jpg"
   }
 },
 {
@@ -61,11 +51,141 @@
 },
 {
   "model": "webapp.otziv",
-  "pk": 4,
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "product": 4,
+    "description": "\u041d\u041e\u0420\u041c",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 8,
+  "fields": {
+    "user": 2,
+    "product": 2,
+    "description": "\u043c\u0430\u043b\u043e \u043c\u044f\u0441\u0430",
+    "ocenka": 4
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 10,
+  "fields": {
+    "user": 1,
+    "product": 2,
+    "description": "\u043f\u043e\u0434\u0434\u0435\u0442",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 12,
+  "fields": {
+    "user": 2,
+    "product": 2,
+    "description": "fsgfadsg",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 13,
+  "fields": {
+    "user": 2,
+    "product": 2,
+    "description": "fsgfadsg",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 14,
+  "fields": {
+    "user": 2,
+    "product": 2,
+    "description": "fsgfadsg",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 18,
   "fields": {
     "user": 1,
     "product": 1,
-    "description": "\u043d\u0435 \u043c\u044b\u043b\u0438\u0442\u0441\u044f",
+    "description": "\u041c\u041e\u0419 \u041e\u0422\u0417\u042b\u0412",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 23,
+  "fields": {
+    "user": 1,
+    "product": 1,
+    "description": "\u041c\u043e\u0439 \u043e\u0442\u0437\u044b\u0432 45",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 25,
+  "fields": {
+    "user": 4,
+    "product": 1,
+    "description": "fwfw",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 26,
+  "fields": {
+    "user": 4,
+    "product": 1,
+    "description": "norm",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 27,
+  "fields": {
+    "user": 4,
+    "product": 1,
+    "description": "gsegseg",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 28,
+  "fields": {
+    "user": 1,
+    "product": 1,
+    "description": "fsdfgsdfsc",
+    "ocenka": 5
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 29,
+  "fields": {
+    "user": 4,
+    "product": 1,
+    "description": "twytrwey",
+    "ocenka": 1
+  }
+},
+{
+  "model": "webapp.otziv",
+  "pk": 30,
+  "fields": {
+    "user": 4,
+    "product": 1,
+    "description": "for user 2",
     "ocenka": 1
   }
 }

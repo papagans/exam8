@@ -134,13 +134,6 @@ def update_profile(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = UserChForm(request.POST, request.FILES, instance=request.user)
-        # git = request.user.profile.github
-        # print(git)
-        # git = re.match(git, "https://github.com/")
-        # print(git, 'it works!!!')
-
-        # if git == match.group(0):
-        # print(match.group(0), 'it works!')
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
