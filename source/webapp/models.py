@@ -35,7 +35,7 @@ OCENKA_CHOICES = (
 class Otziv(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                              verbose_name='Автор', related_name='otziv')
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Товар')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Товар', related_name='product_otziv')
     description = models.TextField(max_length=400, null=False, blank=False, verbose_name='Отзыв')
     ocenka = models.IntegerField(choices=OCENKA_CHOICES, default=OCENKA_CHOICES[0][0],
                                 verbose_name='Оценка')

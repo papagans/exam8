@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block title %}{{ product.name }}{% endblock %}
 {% block content %}
     <div class="text-center">
         <h1>{{ product.name }}</h1>
         <div class="row">
             <div class="col col-12 col-sm-10 col-md-8 col-lg-6 m-auto">
-                <img src="{{ product.photo.url }}" class="img-fluid" alt="{{ product.name }}">
+                {% if product.photo %}
+                            <img src="{{ product.photo.url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% else %}
+                        <img class="card-img-top" src="{% static 'no-image-900x.jpg' %}" width="250" height="250" alt="user picture">
+                    {% endif %}
             </div>
         </div>
         <p><b>Категория:</b> {{ product.get_category_display }}</p>
-        <p><b>Цена:</b> {{ product.price }} сом</p>
-        <p><b>В наличии:</b> {{ product.in_order|yesno:"Да,Нет" }}</p>
-        <p><a href="{% url 'webapp:basket_change' %}?pk={{ product.pk }}&action=add&next={% url "webapp:product_detail" product.pk %}" class="btn btn-primary">В корзину</a></p>
-        <p><a href="{% url 'webapp:product_update' product.pk %}" class="btn btn-primary">Изменить</a></p>
-        <p><a href="{% url 'webapp:product_delete' product.pk %}" class="btn btn-danger">Нет в наличии</a></p>
+        <p><a href="{% url 'product_update' product.pk %}" class="btn btn-primary">Изменить</a></p>
+        <p><a href="{% url 'product_delete' product.pk %}" class="btn btn-danger">Удалить</a></p>
+    <p><b>Отзывы:</b> {{ product. }}</p>
     </div>
 {% endblock %}
