@@ -6,13 +6,16 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from webapp.models import Product, Otziv
 from django.shortcuts import reverse, redirect, get_object_or_404
 
+
 class IndexView(ListView):
     model = Product
     template_name = 'index.html'
     def get_context_data(self, **kwargs):
         pk = self.kwargs.get('pk')
         context = super().get_context_data(**kwargs)
-
+        # context['total'] = total
+        # print(otzivi)
+        # for tot in
         return context
 
 class ProductView(DetailView):
@@ -20,10 +23,18 @@ class ProductView(DetailView):
     template_name = 'product/detail.html'
 
     def get_context_data(self, **kwargs):
+        total = 0
+        ocenka = 0
         pk = self.kwargs.get('pk')
+        product = Otziv.objects.all().filter(product_id=pk)
+        for i in product:
+            ocenka += i.ocenka
+            total += 1
+        obsh = ocenka / total
+        print(obsh)
         context = super().get_context_data(**kwargs)
-        otzivi= Otziv.objects.all().filter(product_id=pk)
         context['otziv'] = Otziv.objects.all().filter(product_id=pk)
+        context['obsh'] = int(obsh)
         return context
 
 
